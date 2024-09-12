@@ -18,11 +18,10 @@ def arithmetic_arranger(problems, show_answers=False):
     
     #Getting the width count of the longest operand
         longest_operand = max(len(first_operand), len(second_operand))
-        print(longest_operand)
         align = longest_operand + 2
     #Right alignment
         aligned_first_operand.append(first_operand.rjust(align))
-        aligned_second_operand.append(operator + second_operand.rjust(align))
+        aligned_second_operand.append(operator + " "+second_operand.rjust(longest_operand))
         dash.append("-" * align)
     #2nd problem (only + and - operators accepted)
     #Specify the operators
@@ -64,5 +63,5 @@ def arithmetic_arranger(problems, show_answers=False):
     else:
         return (f'{top_row}\n{bottom_row}\n{dash_row}')
     
-print (arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"], True))
+print (arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"], False))
 # print(f'\n{arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])}')
